@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build spore_devnet
 
 on:
   push:
@@ -35,18 +35,6 @@ jobs:
         run: |
           capsule build --release
           cd ..
-
-  spore_devnet:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
 
       - name: Install Dependencies
         run: npm install
