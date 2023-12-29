@@ -1,18 +1,24 @@
-# CKB-Contract-Data-Simulator
+# spore_devnet
 
+``` sh
+sh prepare.sh
+```
+
+To build contracts, run:
+
+``` sh
+cd spore-contract
+capsule build --release
+```
 
 generate data 
 ```shell
-sh prepare.sh
 npm i
 npm run build:lumos
 
 npm run test:start
 
 npm run test:deploy
-
-npm run test:e2e
-
 ```
 
 clean env 
