@@ -48,6 +48,10 @@ jobs:
 
       - name: Start Test
         run: npm run test:start
+        background: true
+
+      - name: Wait for Test to finish
+        run: wait $!
 
       - name: Deploy Test
         run: npm run test:deploy
