@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-    workflow_dispatch: { }
+    workflow_dispatch: {}
     schedule:
       - cron: '30 22 * * *' # Triggered every morning at 06:30 am (UTC time)
 
