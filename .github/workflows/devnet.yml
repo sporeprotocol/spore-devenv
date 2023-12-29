@@ -47,11 +47,10 @@ jobs:
         run: npm run build:lumos
 
       - name: Start Test
-        run: npm run test:start
-        background: true
+        run: npm run test:start > /dev/null 2>&1 &
 
-      - name: Wait for Test to finish
-        run: wait $!
+      - name: Wait for 5 seconds
+        run: sleep 5
 
       - name: Deploy Test
         run: npm run test:deploy
