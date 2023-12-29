@@ -25,19 +25,19 @@ jobs:
       - name: Install Cross in spore-contract directory
         run: |
           cd spore-contract
-#          cargo install cross --git https://github.com/cross-rs/cross
+          cargo install cross --git https://github.com/cross-rs/cross
           cd ..
 
       - name: Install Capsule in spore-contract directory
         run: |
           cd spore-contract
-#          cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.10.1
+          cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.10.1
           cd ..
 
       - name: Build contracts
         run: |
           cd spore-contract
-#          capsule build --release
+          capsule build --release
           cd ..
 
       - name: Install Dependencies
