@@ -1,0 +1,47 @@
+{
+  "name": "ckb-contract-data-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:lumos": "cd lumos && pnpm install && pnpm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:start": "npx ts-node scripts/start.ts",
+    "test:deploy":"npx ts-node scripts/deploy.ts",
+    "test:e2e": "jest tests/*.data.test.ts",
+    "test:stop": "npx ts-node scripts/stop.ts"
+  },
+  "workspaces": [
+    "./lumos/packages/*"
+  ],
+  "dependencies": {
+    "@ckb-lumos/base": "^0.21.0-next.0",
+    "@ckb-lumos/bi": "^0.21.0-next.0",
+    "@ckb-lumos/ckb-indexer": "^0.21.0-next.0",
+    "@ckb-lumos/codec": "^0.21.0-next.0",
+    "@ckb-lumos/common-scripts": "^0.21.0-next.0",
+    "@ckb-lumos/config-manager": "^0.21.0-next.0",
+    "@ckb-lumos/experiment-tx-assembler": "^0.21.0-next.0",
+    "@ckb-lumos/hd": "^0.21.0-next.0",
+    "@ckb-lumos/hd-cache": "^0.21.0-next.0",
+    "@ckb-lumos/helpers": "^0.21.0-next.0",
+    "@ckb-lumos/light-client": "^0.21.0-next.0",
+    "@ckb-lumos/lumos": "^0.21.0-next.0",
+    "@ckb-lumos/rpc": "^0.21.0-next.0",
+    "@ckb-lumos/runner": "0.21.0-next.0",
+    "@ckb-lumos/testkit": "^0.21.0-next.0",
+    "@ckb-lumos/toolkit": "^0.21.0-next.0",
+    "@ckb-lumos/transaction-manager": "^0.21.0-next.0",
+    "@ckb-lumos/utils": "0.21.0-next.0",
+    "@spore-sdk/core": "^0.1.0-beta.14",
+    "pnpm": "^8.6.2",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "@types/jest": "^29.5.7"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.7"
+  }
+}
