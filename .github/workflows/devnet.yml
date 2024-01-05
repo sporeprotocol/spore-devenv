@@ -33,7 +33,7 @@ jobs:
       - name: Install Capsule in spore-contract directory
         run: |
           cd spore-contract
-          cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.10.1
+          cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.10.2
           cd ..
 
       - name: Build contracts
