@@ -24,10 +24,6 @@ jobs:
       - name: Run prepare.sh
         run: sh prepare.sh
 
-      - name: Install Dependencies
-        run: npm install
-
-
       - name: Start Test
         run: npm run test:start > /dev/null 2>&1 &
 
