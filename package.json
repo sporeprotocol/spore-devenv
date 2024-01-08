@@ -7,7 +7,6 @@
     "build:lumos": "cd lumos && pnpm install && pnpm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:start": "npx ts-node scripts/start.ts",
-    "test:deploy":"npx ts-node scripts/deploy.ts",
     "test:e2e": "jest tests/*.data.preparation.test.ts",
     "test:stop": "npx ts-node scripts/stop.ts"
   },
