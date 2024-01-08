@@ -143,6 +143,7 @@ async function main() {
   console.log("deploy successful")
   console.log("generate lumos config file path:lumos.json")
   console.log("tip number:",await e2eProvider.rpc.getTipBlockNumber())
+  process.exit();
 }
 
 main();
