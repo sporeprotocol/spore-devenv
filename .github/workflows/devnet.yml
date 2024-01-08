@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: '16.14'
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Run prepare.sh
         run: sh prepare.sh
 
