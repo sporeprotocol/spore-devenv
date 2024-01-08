@@ -106,7 +106,7 @@ async function main() {
       contractPath: "spore-contract/build/release/spore"
     },
     {
-      contractName: "SPORE_CLUSTER",
+      contractName: "CLUSTER",
       contractPath: "spore-contract/build/release/cluster"
     },
     {
