@@ -10,7 +10,7 @@ export const CKB_MAIN_NET_RPC_URL = "https://mainnet.ckbapp.dev/";
 
 export const CKB_TEST_NET_RPC_URL = "https://testnet.ckbapp.dev/";
 
-export const LUMOS_CONFIG_PATH = "lumos.json"
+export const LUMOS_CONFIG_PATH = "config.json"
 
 export const MNEMONIC = "brush scan basic know movie next time soccer speak loop balcony describe"
 // from docker/ckb/dev.toml [[genesis.system_cells]]

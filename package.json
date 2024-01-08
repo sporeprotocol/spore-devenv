@@ -33,7 +33,6 @@
     "@ckb-lumos/toolkit": "^0.21.0-next.0",
     "@ckb-lumos/transaction-manager": "^0.21.0-next.0",
     "@ckb-lumos/utils": "0.21.0-next.0",
-    "@spore-sdk/core": "^0.1.0-beta.14",
     "pnpm": "^8.6.2",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",

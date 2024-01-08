@@ -4,32 +4,16 @@
 sh prepare.sh
 ```
 
-To build contracts, run:
-
-``` sh
-cd spore-contract
-capsule build --release
-```
-
-generate data 
+Generate spore dev data
 ```shell
 npm i
-npm run build:lumos
 
 npm run test:start
-
-npm run test:deploy
 
 npm run test:e2e
 ```
 
-Data movement
-``` sh
-sh move_file.sh
-```
-
-clean env 
+clean env
 ```shell
-rm -rf tmp 
-rm lumos.json
+npm run test:stop
 ```
