@@ -16,10 +16,14 @@ if (!accountCharlie || !accountAlice) {
     accountCharlie = process.env.VITE_ACCOUNT_CHARLIE;
     accountAlice = process.env.VITE_ACCOUNT_ALICE;
 }
-
+// Use try...catch to handle errors
+try {
 // If after loading .env file, environment variables are still empty, throw an error
-if (!accountCharlie || !accountAlice) {
-    throw new Error('Missing account information. Please check environment variables.');
+    if (!accountCharlie || !accountAlice) {
+        throw new Error('Missing account information. Please check environment variables.');
+    }
+} catch (error) {
+    console.error('error message:', (error as Error).message);
 }
 
 const CHARLIE = randomSecp256k1Account(accountCharlie);

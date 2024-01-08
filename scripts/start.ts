@@ -141,7 +141,7 @@ async function main() {
     console.log("contract name:",deployContract.contractName," hash",tx)
   }
   console.log("deploy successful")
-  console.log("generate lumos config file path:lumos.json")
+  console.log("generate lumos config file path:config.json")
   console.log("tip number:",await e2eProvider.rpc.getTipBlockNumber())
 }
 
