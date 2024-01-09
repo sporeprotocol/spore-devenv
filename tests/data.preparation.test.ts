@@ -31,7 +31,7 @@ const ALICE = randomSecp256k1Account(accountAlice);
 
 describe('CKBytes', function () {
     it('should have claimed CKBytes for charlie/alice', async () => {
-        await e2eProvider.claimCKB({ claimer: CHARLIE.address, amount: BI.from(1000000 * 10 ** 8) });
-        await e2eProvider.claimCKB({ claimer: ALICE.address, amount: BI.from(1000000 * 10 ** 8) });
+        await e2eProvider.claimCKB({ claimer: CHARLIE.address, amount: BI.from(10000000 * 10 ** 8) });
+        await e2eProvider.claimCKB({ claimer: ALICE.address, amount: BI.from(10000000 * 10 ** 8) });
     });
 });

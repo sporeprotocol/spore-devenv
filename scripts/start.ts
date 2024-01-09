@@ -134,7 +134,7 @@ async function main() {
       account: account,
       contractName: deployContract.contractName,
       contractPath: deployContract.contractPath,
-      deployType: "type"
+      deployType: "data1"
     })
     await e2eProvider.waitTransactionCommitted(tx)
     let ret = await e2eProvider.rpc.getTransaction(tx)
