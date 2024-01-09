@@ -1,6 +1,6 @@
 # Pull project lumos/spore-contract
 git clone https://github.com/ckb-js/lumos.git
-git clone https://github.com/Dawn-githup/spore-contract.git
+git clone https://github.com/sporeprotocol/spore-contract.git
 
 # Build spore-contract
 cd spore-contract
