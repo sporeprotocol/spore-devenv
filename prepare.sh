@@ -36,6 +36,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Log default branch
+echo "Default branch is set to1: $default_branch"
+
 # Use the provided commit hash if available
 if [ -n "$commit_hash" ]; then
     default_branch="$commit_hash"
@@ -48,7 +51,7 @@ git clone $repo_url
 cd spore-contract
 
 # Log default branch
-echo "Default branch is set to: $default_branch"
+echo "Default branch is set to2: $default_branch"
 
 # Checkout the specified branch or commit hash
 git checkout $default_branch
