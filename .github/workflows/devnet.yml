@@ -27,6 +27,9 @@ jobs:
       - name: Print current commit hash
         run: echo "Current commit hash is $GITHUB_SHA"
 
+      - name: Get Branch Name
+        run: echo "Current branch is ${GITHUB_REF/refs\/heads\//}"
+
       - name: Run prepare.sh
         run: bash prepare.sh -c $GITHUB_SHA
 
