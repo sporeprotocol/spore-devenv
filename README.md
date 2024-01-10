@@ -10,23 +10,23 @@ You can use command-line options to override default settings:
 
 - **Specify Branch:**
   ```bash
-  ./prepare.sh -b master
+  bash prepare.sh -b master
 
 - **Specify Commit Hash:**
   ```bash
-  ./prepare.sh -c abcdef123456
+  bash prepare.sh -c abcdef123456
 
 - **Specify Repository URL:**
   ```bash
-  ./prepare.sh -r https://github.com/your-username/your-repo.git
+  bash prepare.sh -r https://github.com/your-username/your-repo.git
 
 - **Combined Options:**
     - **Specify Branch and Commit Hash:**
       ```bash
-      ./prepare.sh -b develop -c abcdef123456
+      bash prepare.sh -b develop -c abcdef123456
     - **Change Repository URL and Specify Commit Hash:**
       ```bash
-      ./prepare.sh -r https://github.com/your-username/your-repo.git -c abcdef123456
+      bash prepare.sh -r https://github.com/your-username/your-repo.git -c abcdef123456
 
 Generate spore dev data
 ```shell
