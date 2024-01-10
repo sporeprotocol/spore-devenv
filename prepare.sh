@@ -47,6 +47,9 @@ git clone $repo_url
 # Enter the repository directory
 cd spore-contract
 
+# Log default branch
+echo "Default branch is set to: $default_branch"
+
 # Checkout the specified branch or commit hash
 git checkout $default_branch
 
