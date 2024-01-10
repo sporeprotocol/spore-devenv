@@ -1,5 +1,7 @@
-#!/bin/bash
-
+# Pull project lumos
+git clone https://github.com/ckb-js/lumos.git
+# Default branch is master
+default_branch="master"
 # Default repository URL
 repo_url="https://github.com/sporeprotocol/spore-contract.git"
 
@@ -11,6 +13,12 @@ while [[ $# -gt 0 ]]; do
         -c|--commit-hash)
         # Specify commit hash
         commit_hash="$2"
+        shift
+        shift
+        ;;
+        -b|--branch)
+        # Specify branch (overrides default)
+        default_branch="$2"
         shift
         shift
         ;;
@@ -28,43 +36,19 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-# If a commit hash is provided, use the provided commit hash
+# Use the provided commit hash if available
 if [ -n "$commit_hash" ]; then
-    echo "Switching to commit hash: $commit_hash"
-    
-    # Clone the repository and enter the directory
-    git clone $repo_url
-    cd spore-contract
-
-    # Get the list of parent commits of a merge commit
-    parent_commits=($(git log --pretty=format:%P -n 1 $commit_hash))
-    # Output parent commit list
-    echo "Parent commits: ${parent_commits[@]}"
-
-    # Check if it is a merge commit
-    if [ "${#parent_commits[@]}" -gt 1 ]; then
-        # Process merge commits, selecting the first parent commit
-        parent_commit=${parent_commits[0]}
-        git checkout $parent_commit
-        echo "Switched to parent commit: $parent_commit"
-
-        # Get the latest commit hash
-        latest_commit=$(git log -n 1 --pretty=format:%H)
-        echo "Latest commit hash: $latest_commit"
-
-        # Switch to latest commit
-        git checkout $latest_commit
-        echo "Switched to latest commit: $latest_commit"
-    else
-        # For ordinary submissions, switch directly
-        git checkout $GITHUB_SHA
-        echo "Switched to commit: $GITHUB_SHA"
-    fi
-else
-    # No commit hash provided
-    echo "No commit hash provided."
+    default_branch="$commit_hash"
 fi
 
+# Clone the repository
+git clone $repo_url
+
+# Enter the repository directory
+cd spore-contract
+
+# Checkout the specified branch or commit hash
+git checkout $default_branch
 
 # Build spore-contract
 cargo install cross --git https://github.com/cross-rs/cross
