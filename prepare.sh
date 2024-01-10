@@ -2,8 +2,7 @@
 
 # Pull project lumos
 git clone https://github.com/ckb-js/lumos.git
-# Default branch is master
-default_branch="master"
+
 # Default repository URL
 repo_url="https://github.com/sporeprotocol/spore-contract.git"
 
@@ -15,12 +14,6 @@ while [[ $# -gt 0 ]]; do
         -c|--commit-hash)
         # Specify commit hash
         commit_hash="$2"
-        shift
-        shift
-        ;;
-        -b|--branch)
-        # Specify branch (overrides default)
-        default_branch="$2"
         shift
         shift
         ;;
@@ -40,25 +33,20 @@ done
 
 # Use the provided commit hash if available
 if [ -n "$commit_hash" ]; then
-    default_branch="$commit_hash"
+    echo "Switching to commit hash: $commit_hash"
+    git clone $repo_url
+    cd spore-contract
+    git checkout $commit_hash
+else
+    # Clone the repository and enter the directory
+    git clone $repo_url
+    cd spore-contract
+
+    # Get the current branch name
+    branch_name=$(git rev-parse --abbrev-ref HEAD)
+    echo "Current branch name: $branch_name"
 fi
 
-# Clone the repository
-git clone $repo_url
-
-# Enter the repository directory
-cd spore-contract
-
-current_branch=$(git rev-parse --abbrev-ref HEAD)
-echo "Current branch is $current_branch"
-
-# Get the current branch name
-branch_name=$(git rev-parse --abbrev-ref HEAD)
-echo "Current branch name: $branch_name"
-
-
-# Checkout the specified branch or commit hash
-git checkout $default_branch
 
 # Build spore-contract
 cargo install cross --git https://github.com/cross-rs/cross
