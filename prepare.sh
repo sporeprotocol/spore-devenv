@@ -36,6 +36,7 @@ if [ -n "$commit_hash" ]; then
     echo "Switching to commit hash: $commit_hash"
     git clone $repo_url
     cd spore-contract
+    git checkout bug/payment_and_type_hash
     git checkout $commit_hash
 else
     # Clone the repository and enter the directory
