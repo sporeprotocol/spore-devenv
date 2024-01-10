@@ -1,4 +1,4 @@
-# spore_devnet
+# spore-devenv
 
 ## Prepare Script
 
