@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Pull project lumos
 git clone https://github.com/ckb-js/lumos.git
 # Default branch is master
