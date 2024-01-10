@@ -52,6 +52,11 @@ cd spore-contract
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 echo "Current branch is $current_branch"
 
+# Get the current branch name
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch name: $branch_name"
+
+
 # Checkout the specified branch or commit hash
 git checkout $default_branch
 
