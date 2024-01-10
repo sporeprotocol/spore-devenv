@@ -28,7 +28,7 @@ jobs:
         run: echo "Current commit hash is $GITHUB_SHA"
 
       - name: Run prepare.sh
-        run: sh prepare.sh -c $GITHUB_SHA
+        run: bash prepare.sh -c $GITHUB_SHA
 
       - name: Start Test
         run: npm run test:start > /dev/null 2>&1 &
