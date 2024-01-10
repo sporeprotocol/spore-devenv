@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Pull project lumos
-git clone https://github.com/ckb-js/lumos.git
-
 # Default repository URL
 repo_url="https://github.com/sporeprotocol/spore-contract.git"
 
@@ -34,10 +31,25 @@ done
 # Use the provided commit hash if available
 if [ -n "$commit_hash" ]; then
     echo "Switching to commit hash: $commit_hash"
+
+    # Clone the repository and enter the directory
     git clone $repo_url
     cd spore-contract
-    git checkout bug/payment_and_type_hash
-    git checkout $commit_hash
+
+    # Check if it's a merge commit
+    is_merge_commit=$(git cat-file -p $commit_hash | grep "^parent" | wc -l)
+
+    if [ "$is_merge_commit" -gt 0 ]; then
+        # Handle merge commit, assuming switching to the first parent commit
+        parent_commit=$(git rev-list --parents -n 1 $commit_hash | awk '{print $2}')
+        git checkout -b new_branch $parent_commit
+        echo "Switched to branch from merge commit: $parent_commit"
+    else
+        # Switch directly for a regular commit
+        git checkout $commit_hash
+        echo "Switched to commit: $commit_hash"
+    fi
+
 else
     # Clone the repository and enter the directory
     git clone $repo_url
@@ -47,7 +59,6 @@ else
     branch_name=$(git rev-parse --abbrev-ref HEAD)
     echo "Current branch name: $branch_name"
 fi
-
 
 # Build spore-contract
 cargo install cross --git https://github.com/cross-rs/cross
