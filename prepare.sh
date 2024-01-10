@@ -34,6 +34,7 @@ done
 # Use the provided commit hash if available
 if [ -n "$commit_hash" ]; then
     echo "Switching to commit hash: $commit_hash"
+    git clone $repo_url
     cd spore-contract
     git checkout $commit_hash
 else
