@@ -49,6 +49,9 @@ git clone $repo_url
 # Enter the repository directory
 cd spore-contract
 
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+echo "Current branch is $current_branch"
+
 # Checkout the specified branch or commit hash
 git checkout $default_branch
 
