@@ -103,23 +103,23 @@ async function main() {
   let deployContractList = [
     {
       contractName: "SPORE",
-      contractPath: "spore-contract/build/release/spore"
+      contractPath: "../spore-contract/build/release/spore"
     },
     {
       contractName: "CLUSTER",
-      contractPath: "spore-contract/build/release/cluster"
+      contractPath: "../spore-contract/build/release/cluster"
     },
     {
       contractName: "CLUSTER_AGENT",
-      contractPath: "spore-contract/build/release/cluster_agent"
+      contractPath: "../spore-contract/build/release/cluster_agent"
     },
     {
       contractName: "CLUSTER_PROXY",
-      contractPath: "spore-contract/build/release/cluster_proxy"
+      contractPath: "../spore-contract/build/release/cluster_proxy"
     },
     {
       contractName: "SPORE_EXTENSION_LUA",
-      contractPath: "spore-contract/build/release/spore_extension_lua"
+      contractPath: "../spore-contract/build/release/spore_extension_lua"
     },
     {
       contractName: "SPORE_V1",
