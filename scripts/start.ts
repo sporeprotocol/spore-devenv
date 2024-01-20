@@ -120,6 +120,14 @@ async function main() {
     {
       contractName: "SPORE_EXTENSION_LUA",
       contractPath: "spore-contract/build/release/spore_extension_lua"
+    },
+    {
+      contractName: "SPORE_V1",
+      contractPath: "contracts/spore_v1"
+    },
+    {
+      contractName: "CLUSTER_V1",
+      contractPath: "contracts/cluster_v1"
     }
   ]
   for (let i = 0; i < deployContractList.length; i++) {
