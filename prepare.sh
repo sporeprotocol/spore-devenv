@@ -58,7 +58,8 @@ git checkout $default_branch
 
 # Build spore-contract
 cargo install cross --git https://github.com/cross-rs/cross
-cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --tag v0.10.1
+curl -L https://github.com/nervosnetwork/capsule/releases/download/v0.10.2/capsule_v0.10.2_x86_64-linux.tar.gz -o /tmp/capsule.tar.gz
+tar -zxf /tmp/capsule.tar.gz -C /tmp
 capsule build --release
 
 npm install
