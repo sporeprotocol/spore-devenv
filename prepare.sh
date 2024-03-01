@@ -1,8 +1,6 @@
 # Pull project lumos
 git clone https://github.com/ckb-js/lumos.git
-cargo install cross --git https://github.com/cross-rs/cross
-curl -L https://github.com/nervosnetwork/capsule/releases/download/v0.10.2/capsule_v0.10.2_x86_64-linux.tar.gz -o /tmp/capsule.tar.gz
-tar -zxf /tmp/capsule.tar.gz
+
 # Default branch is master
 default_branch="master"
 # Default repository URL
@@ -60,6 +58,9 @@ echo "Default branch is set to2: $default_branch"
 git checkout $default_branch
 
 # Build spore-contract
+cargo install cross --git https://github.com/cross-rs/cross
+curl -L https://github.com/nervosnetwork/capsule/releases/download/v0.10.2/capsule_v0.10.2_x86_64-linux.tar.gz -o /tmp/capsule.tar.gz
+tar -zxf /tmp/capsule.tar.gz --strip-components=1
 capsule build --release
 
 npm install
