@@ -61,8 +61,6 @@ git checkout $default_branch
 cargo install cross --git https://github.com/cross-rs/cross
 curl -LO https://github.com/nervosnetwork/capsule/releases/download/v0.10.2/capsule_v0.10.2_x86_64-linux.tar.gz
 tar -zxf capsule_v0.10.2_x86_64-linux.tar.gz --strip-components=1
-cd ..
-cd spore-contract
 capsule build --release
 
 npm install
