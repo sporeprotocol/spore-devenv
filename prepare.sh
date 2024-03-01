@@ -1,7 +1,7 @@
 # Pull project lumos
 git clone https://github.com/ckb-js/lumos.git
 # Default branch is master
-default_branch="feat/change-payment-method "
+default_branch="master"
 # Default repository URL
 repo_url="https://github.com/sporeprotocol/spore-contract.git"
 
