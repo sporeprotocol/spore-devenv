@@ -58,7 +58,7 @@ git checkout $default_branch
 
 # Build spore-contract
 cargo install cross --git https://github.com/cross-rs/cross
-cargo install ckb-capsule --git https://github.com/nervosnetwork/capsule.git --branch develop
+cargo install ckb-capsule
 capsule build --release
 
 npm install
