@@ -122,6 +122,10 @@ async function main() {
       contractPath: "spore-contract/build/release/spore_extension_lua"
     },
     {
+      contractName: "LUA_LIB",
+      contractPath: "spore-contract/build/release/libckblua.so"
+    },
+    {
       contractName: "SPORE_V1",
       contractPath: "contracts/spore_v1"
     },
