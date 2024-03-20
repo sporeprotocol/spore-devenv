@@ -16,6 +16,10 @@ if (!accountCharlie || !accountAlice) {
     accountCharlie = process.env.VITE_ACCOUNT_CHARLIE;
     accountAlice = process.env.VITE_ACCOUNT_ALICE;
 }
+
+console.log('charlie: ', accountCharlie);
+console.log('alice: ', accountAlice);
+
 // Use try...catch to handle errors
 try {
 // If after loading .env file, environment variables are still empty, throw an error
