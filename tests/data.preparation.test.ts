@@ -9,7 +9,7 @@ let accountAlice = process.env.VITE_ACCOUNT_ALICE;
 let accountBob = process.env.VITE_ACCOUNT_BOB;
 
 // Check if environment variables are empty
-if (!accountCharlie || !accountAlice) {
+if (!accountCharlie || !accountAlice || !accountBob) {
     // Load environment variables from .env file
     config({ path: resolve(__dirname, '../.env') });
 
@@ -22,7 +22,7 @@ if (!accountCharlie || !accountAlice) {
 // Use try...catch to handle errors
 try {
 // If after loading .env file, environment variables are still empty, throw an error
-    if (!accountCharlie || !accountAlice) {
+    if (!accountCharlie || !accountAlice || !accountBob) {
         throw new Error('Missing account information. Please check environment variables.');
     }
 } catch (error) {
